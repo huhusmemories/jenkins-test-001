@@ -3,20 +3,22 @@ pipeline {
   stages {
     stage("Huang - Build Docker Image"){
 	    steps{
-        sh "echo Integrating Jenkins pipeline with github webhook using jenkinsfile"
-        sh "ls"
+        sh "echo ${username} ${password}"
+        sh "docker build -t test05 ."
       }
     }
     stage("Huang - Login to Dockerhub"){
       steps {
-        sh "echo deployment stage has been completed"
-        sh "echo good bye"
-        sh "docker build -t test05 ."
+        sh "Logging in to Dockerhub"
+        sh "docker login"
+        sh "${username}"
+        sh "${password}"
       }
     }
     stage("Huang - Push image to dockerhub"){
       steps {
-        sh "echo hi"
+        sh "Pushing image to dockerhub"
+        sh "docker image push ${username}/test05"
       }
     }
 	}
