@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("Huang - Build Docker Image"){
 	    steps{
-        sh "echo ${username} ${password}"
+        // sh "echo ${username} ${password}"
         sh "docker build -t test05 ."
       }
     }
