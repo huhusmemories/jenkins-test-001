@@ -11,6 +11,7 @@ pipeline {
              steps {
                  sh "echo deployment stage has been completed"
                  sh "echo good bye"
+		 sh "docker build -t test05 ."
                  }
 	    }
 	}
