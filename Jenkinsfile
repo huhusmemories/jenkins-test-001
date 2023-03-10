@@ -5,6 +5,7 @@ pipeline {
 	    steps{
 	        sh "echo Integrating Jenkins pipeline with github webhook using jenkinsfile"
                 sh "ls"
+		sh "apt-get install docker-ce docker-ce-cli containerd.io"
 		}
             }
         stage("deployment"){
